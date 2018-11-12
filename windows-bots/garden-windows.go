@@ -15,10 +15,10 @@ func main() {
 		message.Literal(":garden: :windows:"),
 		message.Prefix(
 			"interrupt: ",
-			message.Join(
-				" ",
-				message.Conditional(
-					pairist.WorkingHours("10:00", "18:00", "America/New_York"),
+			message.Conditional(
+				pairist.WorkingHours("10:00", "18:00", "America/New_York"),
+				message.Join(
+					" ",
 					pairist.PeopleInRole{
 						Team: "garden-windows",
 						Role: "Interrupt",
@@ -32,8 +32,8 @@ func main() {
 							"Matt":    "U04G2B2U1",
 						},
 					},
+					message.Literal("PM: <@U1FJWH8HL>"),
 				),
-				message.Literal("PM: <@U1FJWH8HL>"),
 			),
 		),
 	).Message()

@@ -16,10 +16,10 @@ func main() {
 		message.Literal("Support: <https://goo.gl/oLxC5y>"),
 		message.Prefix(
 			"bosh: ",
-			message.Join(
-				" ",
-				message.Conditional(
-					pairist.WorkingHours("10:00", "18:00", "America/New_York"),
+			message.Conditional(
+				pairist.WorkingHours("10:00", "18:00", "America/New_York"),
+				message.Join(
+					" ",
 					pairist.PeopleInRole{
 						Team: "boshwindows",
 						Role: "Interrupt",
@@ -35,16 +35,16 @@ func main() {
 							"Jackson Feeny":    "U7U1BRTR8",
 						},
 					},
+					message.Literal("PM: <@U0MJ7N77U>"),
 				),
-				message.Literal("PM: <@U1CNETREU>"),
 			),
 		),
 		message.Prefix(
 			"garden: ",
-			message.Join(
-				" ",
-				message.Conditional(
-					pairist.WorkingHours("10:00", "18:00", "America/New_York"),
+			message.Conditional(
+				pairist.WorkingHours("10:00", "18:00", "America/New_York"),
+				message.Join(
+					" ",
 					pairist.PeopleInRole{
 						Team: "garden-windows",
 						Role: "Interrupt",
@@ -58,8 +58,8 @@ func main() {
 							"Matt":    "U0563PD3X",
 						},
 					},
+					message.Literal("PM: <@U1CNETREU>"),
 				),
-				message.Literal("PM: <@U0MJ7N77U>"),
 			),
 		),
 	).Message()
