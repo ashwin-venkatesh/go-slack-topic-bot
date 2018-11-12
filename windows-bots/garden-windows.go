@@ -18,7 +18,7 @@ func main() {
 			message.Join(
 				" ",
 				message.Conditional(
-					pairist.WorkingHours("09:00", "18:00", "America/New_York"),
+					pairist.WorkingHours("10:00", "18:00", "America/New_York"),
 					pairist.PeopleInRole{
 						Team: "garden-windows",
 						Role: "Interrupt",
@@ -33,9 +33,9 @@ func main() {
 						},
 					},
 				),
+				message.Literal("PM: <@U1FJWH8HL>"),
 			),
 		),
-		message.Literal("PM: <@U1FJWH8HL>"),
 	).Message()
 	if err != nil {
 		log.Panicf("ERROR: %v", err)

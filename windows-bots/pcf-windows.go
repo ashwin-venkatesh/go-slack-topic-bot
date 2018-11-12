@@ -19,7 +19,7 @@ func main() {
 			message.Join(
 				" ",
 				message.Conditional(
-					pairist.WorkingHours("09:00", "18:00", "America/New_York"),
+					pairist.WorkingHours("10:00", "18:00", "America/New_York"),
 					pairist.PeopleInRole{
 						Team: "boshwindows",
 						Role: "Interrupt",
@@ -36,6 +36,7 @@ func main() {
 						},
 					},
 				),
+				message.Literal("PM: <@U1CNETREU>"),
 			),
 		),
 		message.Prefix(
@@ -43,7 +44,7 @@ func main() {
 			message.Join(
 				" ",
 				message.Conditional(
-					pairist.WorkingHours("09:00", "18:00", "America/New_York"),
+					pairist.WorkingHours("10:00", "18:00", "America/New_York"),
 					pairist.PeopleInRole{
 						Team: "garden-windows",
 						Role: "Interrupt",
@@ -58,6 +59,7 @@ func main() {
 						},
 					},
 				),
+				message.Literal("PM: <@U0MJ7N77U>"),
 			),
 		),
 	).Message()

@@ -1,0 +1,13 @@
+---
+defaults: &defaults
+  buildpacks:
+    - binary_buildpack
+  no-route: true
+  command: sh -c 'while true; do sleep 1; done'
+  health-check-type: process
+
+applications:
+  - name: pcf-windows-topic-bot
+    <<: *defaults
+  - name: garden-windows-topic-bot
+    <<: *defaults
