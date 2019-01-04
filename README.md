@@ -26,7 +26,10 @@ Once there, navigate to the user profile for this new team member
 and in the url you should see this at the end of the path: `team/USER_ID/`.
 
 For the Pivotal `pcf-windows` slack channel, navigate to
-`windows-bots/pcf-windows.go` in this repo. Add the user to the list:
+`windows-bots/pcf-windows.go` in this repo.
+
+Add the user to the list with their `Name` being the same as the one
+in [pair.ist](https://pair.ist/garden-windows/current):
 ```go
 People: map[string]string{
   "Name": "PIVOTAL_USER_ID",
@@ -44,3 +47,27 @@ People: map[string]string{
 ```
 
 ### Redeploying the bot
+
+The bot is deployed to PWS.
+
+Note: you will need the [PCF Scheduler plugin](https://docs.pivotal.io/pcf-scheduler/1-2/installing.html#download-install)
+for the cf cli.
+
+```
+# target PWS
+cf api https://api.run.pivotal.io
+
+# when prompted, target `org: garden-windows` `space: topic-bots`
+cf login
+
+# build the binaries for the bots
+pushd windows-bots
+go build pcf-windows.go
+go build garden-windows.go
+popd
+
+cf push
+
+cf stop garden-windows-topic-bot
+cf stop pcf-windows-topic-bot
+```
