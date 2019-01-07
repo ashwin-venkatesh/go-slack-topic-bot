@@ -17,7 +17,7 @@ Use this programmatically from your own programs. See the ([examples](examples/c
 
 ## Windows Bots
 
-### Adding the new team member to the bot
+### Step 1: Add team member to bots
 
 In order to add a new person to the team, you will need
 to be signed in to the Pivotal and Cloud Foundry Slack orgs. 
@@ -46,28 +46,8 @@ People: map[string]string{
 }
 ```
 
-### Redeploying the bot
-
-The bot is deployed to PWS.
-
-Note: you will need the [PCF Scheduler plugin](https://docs.pivotal.io/pcf-scheduler/1-2/installing.html#download-install)
-for the cf cli.
+### Step 2: Deploy bots to PWS
 
 ```
-# target PWS
-cf api https://api.run.pivotal.io
-
-# when prompted, target `org: garden-windows` `space: topic-bots`
-cf login
-
-# build the binaries for the bots
-pushd windows-bots
-go build pcf-windows.go
-go build garden-windows.go
-popd
-
-cf push
-
-cf stop garden-windows-topic-bot
-cf stop pcf-windows-topic-bot
+./deploy-to-pws.sh
 ```
