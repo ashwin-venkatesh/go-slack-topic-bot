@@ -57,6 +57,7 @@ func main() {
 							"Arjun":     "UBKBNQBBM",
 							"Matt":      "U0563PD3X",
 							"Genevieve": "U0BSZH3EX",
+							"Sophie":    "UF53HEMMW",
 						},
 					},
 					message.Literal("PM: <@U1CNETREU>"),
