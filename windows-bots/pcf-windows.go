@@ -28,7 +28,7 @@ func main() {
 							"Garima Sharma":    "U2LAQS9RQ",
 							"Simon Jones":      "U0H6HC71B",
 							"Ashwin Venkatesh": "U4DF8VBV0",
-							"Kenneth DuMez":    "UBKK5GS8M",
+							"Nick Smith":       "DF9GDFJ22",
 							"Gab Satchi":       "U07K08GGP",
 							"Malini Valliath":  "UC53SHZ32",
 							"Matthew Horan":    "U0563PD3X",
